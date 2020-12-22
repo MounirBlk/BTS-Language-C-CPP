@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+  
+  /*déclaration des variables*/
+  int cpt,min,max,i,j,Tab[10]={3,-4,5,0,0,-7,6,0,2,-1};
+  
+  /*Initialisation des variables*/
+  /*Partie A*/
+  min=Tab[0];
+  max=Tab[0];
+  
+  /* Recherche et Affichage du tableau */  
+  /*Partie A*/
+  for(i=1; i<10;i++){
+    if (Tab[i]<min){
+      min=Tab[i];
+    }
+    if (Tab[i]>max){
+      max=Tab[i];
+    }
+  }
+  /*Partie B*/
+  cpt=0;
+  for (i=0; i<9-cpt; i++){
+    if(Tab[i]==0){
+      for(j=i; j<9; j++){
+	Tab[j]=Tab[j+1];
+      }    
+      Tab[9]=0;
+      cpt=cpt+1;
+      i=i-1;
+    }
+  }
+  
+  for(i=0;i<10;i++){
+    printf(" | %d ", Tab[i]);
+  }
+  printf("|\n\n");
+  
+  /*Affichage de la valeur Max et Min*/
+  
+  printf("\nLe minimum est %d \n",min);
+  printf("Le maximum est %d \n",max);
+  
+  return EXIT_SUCCESS; 
+}
+
+

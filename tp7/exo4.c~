@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/*--------------------------PROGRAMME PRINCIPALE---------------------------*/
+int main (void){
+  /* Déclaration des variables */
+  int x;
+  int y;
+  int *p;
+  int **p;
+  x=1;
+  y=2;
+
+  p=&x;
+  printf("La valeur de x est: %d",x);
+  x=x+y;
+ printf("La valeur de x est: %d",x);
+
+  pp=&p;
+ printf("La valeur de *p est: %d",*p);
+ printf("La valeur de **pp est: %d",**pp);
+ printf("La valeur de p est: %d",p);
+ printf("La valeur de pp est: %d",pp);
+
+  return EXIT_SUCCESS;
+}
+
+/*-------------------------------------------------------------------------*/
+

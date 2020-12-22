@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define L 2
+#define C 3
+/*Prototypes*/
+void rempliTab(int *naruto);
+
+
+
+
+/*--------------------------PROGRAMME PRINCIPALE---------------------------*/
+
+
+int main (void){
+  
+  /*Déclaration des variables*/
+  int tab[L][C];
+  int i,j;
+  int *p;
+  p=&tab[0][0];
+  rempliTab(p); 
+  
+
+ 
+  printf("|\n");
+  
+  return EXIT_SUCCESS;
+}
+
+/*-------------------------------------------------------------------------*/
+void rempliTab(int *naruto){
+  int i;
+
+  for(i=0;i<L*C;i++){
+    printf("Saisir l'element de rang |%d|",i);
+    scanf("%d",(naruto+i));
+}
+}
+/*-------------------------------------------------------------------------*/

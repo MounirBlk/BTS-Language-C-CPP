@@ -1,0 +1,158 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/*Prototype*/
+char ChoixFormeSaisie();
+
+void saisieCart(float Tab[4]);
+void saisiePol(float Tab[4]);
+void ConverPolCart(float Tab[4]);
+void ConverCartPol(float Tab[4]);
+
+void Oper(float Tab1[4],float Tab2[4],float stockage[4]);
+
+
+/*--------------------------PROGRAMME PRINCIPALE---------------------------*/
+int main (void)
+{
+  /* Déclaration des variables */
+  float TabNb1[4];
+  float TabNb2[4];
+  float Tabresu[4];
+  char quest;
+  
+  printf("\nLe premier nombre\n");
+  quest=ChoixFormeSaisie();
+  if(quest=='c' || quest=='C')
+    saisieCart(TabNb1);
+  if(quest=='p' || quest=='P')
+    saisiePol(TabNb1);
+  printf("Forme Cartesienne \tZ= %f + %f i\n",TabNb1[0],TabNb1[1]);
+  printf("Forme Polaire \t\tZ= [%f;%f]\n",TabNb1[2],TabNb1[3]);
+
+  printf("\nLe second nombre\n");
+  quest=ChoixFormeSaisie();
+  if(quest=='c' || quest=='C')
+    saisieCart(TabNb2);
+  if(quest=='p' || quest=='P')
+    saisiePol(TabNb2);
+  printf("Forme Cartesienne \tZ= %f + %f i\n",TabNb2[0],TabNb2[1]); 
+  printf("Forme Polaire \t\tZ= [%f ; %f]\n ",TabNb2[2],TabNb2[3]);
+
+  return EXIT_SUCCESS;
+}
+
+/*-------------------------------------------------------------------------*/
+
+
+/*Définition de fonction(ChoixFormeSaisie)*/
+char ChoixFormeSaisie(){
+  
+  /* Déclaration des variables */
+  char quest,bidon;
+  
+  /*Selection entre la forme cartesienne et polaire*/  
+  do{
+    printf("La forme Cartesienne ou Polaire: ");
+    scanf("%c%c",&quest,&bidon);
+  }while((quest!='c') && (quest!='C') && (quest!='p') && (quest!='P'));
+  
+  return quest;
+}
+/*-------------------------------------------------------------------------*/
+
+/*Définition de fonction(saisieCart)*/
+void saisieCart(float Tab[4]){
+  
+  /* Déclaration des variables */
+  float a,b;
+  
+  /**/
+  printf("\nForme z=a+ib\n");
+  printf("Veuillez entrer la partie réelle(a): ");
+  scanf("%f",&a);
+  printf("Veuillez entrer la partie imaginaire(b): ");
+  scanf("%f",&b);
+  printf("\n");
+  
+}
+/*-------------------------------------------------------------------------*/
+
+/*Définition de fonction(saisiePol)*/
+void saisiePol(float Tab[4]){
+  
+  printf("\nLa forme polaire est: [Module(r);Argument (rho)]\n");
+  printf("Veuillez entrer le module r: ");
+  scanf("%f",&Tab[2]);
+  printf("Veuillez entrer un argument rho: ");
+  scanf("%f",&Tab[3]);
+  printf("\n");
+}
+/*-------------------------------------------------------------------------*/
+
+/*Définition de fonction(ConverPolCart)*/
+void ConverPolCart(float Tab[4]){
+  
+  Tab[0]=Tab[2]*cos(M_PI*Tab[3]/180);
+  Tab[1]=Tab[2]*cos(M_PI*Tab[3]/180);
+
+}
+/*-------------------------------------------------------------------------*/
+
+/*Définition de fonction(ConverCartPol)*/
+void ConverCartPol(float Tab[4]){
+  
+  Tab[2]=sqrt(pow(Tab[0],2)+pow(Tab[1],2));
+  Tab[3]=atan(Tab[1]/Tab[0]);
+ 
+}
+/*-------------------------------------------------------------------------*/
+
+/*Définition de fonction(Oper)*/
+void Oper(float Tab1[4],float Tab2[4],float stockage[4]){
+  float Tab3[4];
+  char opera,bidon;
+
+  printf("Veuillez choisir l'operation (+),(-),(*),(/): ");
+  scanf("%c%c",&bidon,&opera);
+
+  switch(opera){
+  case '+':
+    Tab3[0]=Tab1[0]+Tab2[0];
+    Tab3[1]=Tab1[1]+Tab2[1];
+    Tab3[2]=sqrt(pow(Tab3[0],2)+pow(Tab3[1],2));
+    Tab3[3]=acos(Tab3[0]/Tab3[2]);
+    break;
+  case '-':
+    Tab3[0]=Tab1[0]-Tab2[0];
+    Tab3[1]=Tab1[1]-Tab2[1];
+    Tab3[2]=sqrt(pow(Tab3[0],2)+pow(Tab3[1],2));
+    Tab3[3]=acos(Tab3[0]/Tab3[2]);
+    break;
+  case '*':
+    Tab3[2]=Tab1[2]*Tab2[2];
+    Tab3[3]=Tab1[3]*Tab2[3];
+    Tab3[0]=Tab3[2]*cos(M_PI*Tab3[3]/180);
+    Tab3[1]=Tab3[2]*sin(M_PI*Tab3[3]/180);
+    break;
+  case '/':
+    Tab3[2]=Tab1[2]/Tab2[2];
+    Tab3[3]=Tab1[2]/Tab2[3];
+    Tab3[0]=Tab3[2]*cos(M_PI*Tab3[3]/180);
+    Tab3[1]=Tab3[2]*sin(M_PI*Tab3[3]/180);
+    break;
+  default:
+    printf("Veuillez entrer votre opération:\n");
+    break;
+  }
+	
+  stockage[0] = Tab3[0];
+  stockage[1] = Tab3[1];
+  stockage[2] = Tab3[2];
+  stockage[3] = Tab3[3];
+}
+  
+
+/*-------------------------------------------------------------------------*/
+

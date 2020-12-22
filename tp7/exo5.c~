@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/*--------------------------PROGRAMME PRINCIPALE---------------------------*/
+int main (void){
+  /* Déclaration des variables */
+  int A[]={9,15,26,28,23,33,45,46,51,52,67};
+  int *ptr;
+  ptr=A;
+
+
+  printf("La valeur vaut %p",ptr);
+  ptr=*ptr+2;
+  printf("La valeur vaut %d",*(ptr+2));
+
+  ptr=*(ptr+2);
+  printf("La valeur vaut %d",*ptr);
+
+  &ptr+1;
+ printf("La valeur vaut %d",ptr);
+  &A[4]-3;
+  printf("La valeur vaut %d",*(&A[4]-3));
+  A+3;
+ printf("La valeur vaut %d",ptr);
+  &A[7]-ptr;
+ printf("La valeur vaut %d",ptr);
+  *(ptr+*(ptr+8)-A[7]);
+
+
+  return EXIT_SUCCESS;
+}
+
+/*-------------------------------------------------------------------------*/
+

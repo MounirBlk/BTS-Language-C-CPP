@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define N 10
+/* déclaration de prototype */
+int nb_occurence(char chaine[],char val);
+
+int main(void){
+
+  /* déclaration de variables */
+
+  char chaine[N];
+  char lettre;
+  int i,fonct;
+  
+  /*saisi de données */
+  printf("entrez une chaine de caracteres");
+  fgets(chaine, sizeof chaine, stdin);
+  
+  printf("entrez une lettre souhaitee : ");
+  scanf("%c",&lettre);
+  
+  fonct = nb_occurence(chaine,lettre);
+  
+  /* affichage de données */
+  
+  printf("%s\n",chaine);
+  printf("il y a %d de lettres %c dans la chaine\n",fonct,lettre);
+  
+  return EXIT_SUCCESS;
+}
+
+
+/* définition de la fonction */
+
+int nb_occurence(char chaine[N],char val){
+  int taille,i;
+
+   taille = 0;
+  for(i=0;i<10;i=i+1){
+    if(chaine[i]==val){
+      taille = taille+1;
+    }
+  }
+
+  return taille;
+}  

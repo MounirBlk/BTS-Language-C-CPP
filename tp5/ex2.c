@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void){
+  
+  /*déclaration des variables*/
+  int taille,i,cpt;
+  char chaine[10];
+  
+  /*Saisie de la chaine de caractères*/
+  printf("Entrez une chaine de caractères : "); 
+  scanf("%s",chaine);
+  
+  /*Affichage de la chaine avant traitement*/ 
+  for(i=0;i<10;i++){
+    printf("%x ",chaine[i]);
+    
+  }
+  /*Determination de la taille de la chaine*/
+  //taille=strlen(chaine);
+  taille=0; 
+  while(chaine[taille]!=0){
+    taille=taille+1;
+  }  
+  
+  /*Inversion de la casse */
+  for(i=0;i<taille;i++)
+    chaine[i]=chaine[i]^0x20;
+  
+  /*Affichage de la chaine apres traitement*/
+  printf("\n L'inversion de la casse est: %s",chaine);
+  printf("\n");
+  printf("La taille de la chaine vaut: %d \n",taille);
+  
+  return EXIT_SUCCESS;
+}

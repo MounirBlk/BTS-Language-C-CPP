@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+  int Tabm[3][10],i,j;
+ 
+  /* pour i de 1 à 10, on incrémente de 1 et pour j de 1 à 3 */
+ 
+      for(i=0;i<3;i++)
+	{
+	   
+	  for(j=0;j<10;j++)
+	    {
+	      Tabm[i][j]=i+1;
+	      Tabm[i][j]=j+1;
+   /* affichage du tableau 3 fois avec la variable j */
+   /* et affichage de 10 valeurs avec la variable i */
+	      
+	        printf("%d ",Tabm[i][j]);
+	    }
+	  printf("\n");
+	}
+
+	return EXIT_SUCCESS;
+}

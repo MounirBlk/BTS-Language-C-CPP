@@ -1,0 +1,32 @@
+#include<stdlib.h>
+#include<stdio.h>
+
+int main (void){
+  
+  /*Déclarer les variables*/
+  int nombre,pair,impair;
+  
+  /*Initialisation des varriables*/
+  pair=0;
+  impair=0;
+  
+  do{
+    /*Saisie du nombre entier*/
+    printf("Entrez un nombre entier: ");
+    scanf("%d",&nombre);
+    
+    /*Tester si le nombre est pair ou impair*/
+    if (nombre%2==0){
+      pair=pair+1;
+    }else{	
+      impair=impair+1;
+    }
+  }while(nombre != 0);
+  pair=pair+1;
+  /*Affichage des nombress entiers*/
+  printf("Le nombre d'entiers pairs saisis est égal à: %d ",pair);
+  printf("Le nombre d'entiers impairs saisis est égal à: %d ",impair);
+  
+  
+  return EXIT_SUCCESS;
+}

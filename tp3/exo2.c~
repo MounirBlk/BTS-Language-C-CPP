@@ -1,0 +1,28 @@
+#include<stdlib.h>
+#include<stdio.h>
+
+
+int main (void){
+
+	/*Déclarer les variables*/
+	int i,n,fact;
+	
+	/*Initialisation des valeurs*/
+	fact=1;
+
+	/*Saisir des données avec l'affichage*/
+	
+	printf("Veuillez saisir un nombre: ");
+	scanf("%d",&n);
+	
+	for (i=1;i<=n;i++){
+	fact=fact*i;
+	}
+	printf("Le factoriel de la valeur %d est égal à %d \n",n,fact);
+	
+	
+
+
+return EXIT_SUCCESS;
+}
+	

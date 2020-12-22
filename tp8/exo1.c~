@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+/*Prototypes*/
+
+
+/*--------------------------PROGRAMME PRINCIPALE---------------------------*/
+int main (void){
+  
+  /*Déclaration des variables*/
+  int *tab1,*tab2;
+
+  /*Initialisation des variables*/
+  tab1=(int *) malloc(2*sizeof(int));
+  tab2=(int *) malloc(10*sizeof(int));
+
+  printf("La dimension d'un entier est: %d octets\n",sizeof(int));
+  printf("La mémoire allouée est de: %d octets\n",2*sizeof(int));  
+
+  printf("L'adresse de base du bloc de mémoire(tab1) alloué est:%p\n",tab1);
+  printf("L'adresse de base du bloc de mémoire(tab2) alloué est:%p\n",tab2);
+
+  for (i=0;i<2;i++){
+    printf("Entrez l'element de rang i:");
+    scanf("%d",(tab1+i));
+  }
+
+
+
+  return EXIT_SUCCESS;
+}
+/*-------------------------------------------------------------------------*/

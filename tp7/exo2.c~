@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/*--------------------------PROGRAMME PRINCIPALE---------------------------*/
+int main (void){
+  /* Déclaration des variables */
+  float a;
+  float *b;
+
+  
+
+ 
+  return EXIT_SUCCESS;
+}
+
+/*-------------------------------------------------------------------------*/
+

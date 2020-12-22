@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+float fonctionINV(float a);
+
+int main(void){
+  
+  float nbre,inverse;
+  
+  printf("Veuiller entrez un nombre réelle: ");
+  scanf("%f",&nbre);
+  
+  inverse=fonctionINV(nbre);
+  
+  printf("L'inverse de %.2f est de %.3f\n",nbre,inverse);
+  
+  return EXIT_SUCCESS;
+}
+
+float fonctionINV(float a){
+  
+  float Inversement;
+  
+  Inversement=1/a;
+  
+  return Inversement;
+}
